@@ -1,0 +1,18 @@
+<title>Exercício 3</title>
+</head>
+<body>
+    <h1>Loja</h1>
+    <p>Faça um programa para uma loja, que leia o preço de um produto e informe as opções de pagamento.  Calcule e informe o valor para pagamento à vista com 10% de desconto e o valor em 3x.</p>
+    <script>
+        let precoProduto = Number(prompt("Digite o preço:"));
+        alert('[1] Para pagamento à vista - 10% de desconto\n[2] O valor sem desconto em 3x.')
+        let tipoPagamento = Number(prompt("Informe o tipo de pagamento:"));
+        if(tipoPagamento == 1){
+            console.log(`Valor com desconto: ${precoProduto*0.9} reais.`);
+        }
+        else if(tipoPagamento == 2){
+            console.log(`3 pagamentos de: ${precoProduto/3} reais. Total: ${precoProduto}`);
+        }
+        else
+            console.log(`Opção inválida!!!`);
+    </script>
