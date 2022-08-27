@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data</title>
+</head>
+
+<body>
+    <script>
+        let hoje = new Date();
+        let dia = hoje.getDate();
+        let ano = hoje.getFullYear();
+        function retornaDiaSemana(hoje) {
+            let diaSemana = ``;
+            switch (hoje.getDay()) {
+                case 0:
+                    break;
+                    diaSemana = `domigo`;
+                case 1:
+                    diaSemana = `segunda-feira`;
+                    break;
+                case 2:
+                    diaSemana = `terça-feira`;
+                    break;
+                case 3:
+                    diaSemana = `quarta-feira`;
+                    break;
+                case 4:
+                    diaSemana = `quinta-feira`;
+                    break;
+                case 5:
+                    diaSemana = `sexta-feira`;
+                    break;
+                case 6:
+                    diaSemana = `sábado`;
+                    break;
+            }
+            return diaSemana;
+        }
+        function retornaMes(hoje) {
+            let mes = ``;
+            switch (hoje.getMonth()) {
+                case 0:
+                    mes = `janeiro`;
+                    break;
+                case 1:
+                    mes = `fevereiro`;
+                    break;
+                case 2:
+                    mes = `março`;
+                    break;
+                case 3:
+                    mes = `abril`;
+                    break;
+                case 4:
+                    mes = `maio`;
+                    break;
+                case 5:
+                    mes = `junho`;
+                    break;
+                case 6:
+                    mes = `julho`;
+                    break;
+                case 7:
+                    mes = `agosto`;
+                    break;
+                case 8:
+                    mes = `setembro`;
+                    break;
+                case 9:
+                    mes = `outubro`;
+                    break;
+                case 10:
+                    mes = `novembro`;
+                    break;
+                case 11:
+                    mes = `dezembro`;
+                    break;
+            }
+            return mes;
+        }
+        let diaSemana = retornaDiaSemana(hoje);
+        let mes = retornaMes(hoje);
+        document.write(`Hoje é ${diaSemana}, dia ${dia} de ${mes} de ${ano}`);
+        
+        
+        diasSemana = ['domingo','segunda-feira','terça-feira','quarta-feira','quinta-feira','sexta-feira','sabado'];
+        mesAno = ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'];
+        let diaSemana2 = diasSemana[hoje.getDay()];
+        let mes2 = mesAno[hoje.getMonth()];
+        document.write(`<br>Hoje é ${diaSemana2}, dia ${dia} de ${mes2} de ${ano}`)
+    </script>
+</body>
+
+</html>
