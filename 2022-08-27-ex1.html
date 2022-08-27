@@ -85,10 +85,9 @@
         let diaSemana = retornaDiaSemana(hoje);
         let mes = retornaMes(hoje);
         document.write(`Hoje é ${diaSemana}, dia ${dia} de ${mes} de ${ano}`);
-        
-        
-        diasSemana = ['domingo','segunda-feira','terça-feira','quarta-feira','quinta-feira','sexta-feira','sabado'];
-        mesAno = ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'];
+        //Outra forma de fazer...       
+        let diasSemana = ['domingo','segunda-feira','terça-feira','quarta-feira','quinta-feira','sexta-feira','sabado'];
+        let mesAno = ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'];
         let diaSemana2 = diasSemana[hoje.getDay()];
         let mes2 = mesAno[hoje.getMonth()];
         document.write(`<br>Hoje é ${diaSemana2}, dia ${dia} de ${mes2} de ${ano}`)
