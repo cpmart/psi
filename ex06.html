@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acesso ao conteúdo de Caixa de Texto</title>
+</head>
+<body>
+    <p>Nome: <input type="text" id="nome"></p>
+    <p>Idade: <input type="text" id="idade"></p>
+    <p><input type="button" onclick="calcularMaioridade()" value="Calcular"></p>
+    <h2>Resultado</h2>
+    <p id="resposta"></p>
+    <script>
+        function calcularMaioridade(){
+            let nome = document.getElementById('nome').value;
+            let idade = Number(document.getElementById('idade').value);
+            if(idade>=18)
+                document.getElementById('resposta').innerText = `${nome} atingiu a maioridade!!!`;
+            else
+                document.getElementById('resposta').innerText = `${nome} não atingiu a maioridade!!!`;   
+        }
+    </script>
+</body>
+</html>
