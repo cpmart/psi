@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Restaurante FATEC Jales</h1>
+    <p>Peso em gramas: <input type="text" id="peso"></p>
+    <p><input type="button" value="Calcular" onclick="calcularValor()"></p>
+    <div id="valor-pagar"></div>
+    <script>
+        const calcularValor = function(){
+            let peso = Number(document.getElementById('peso').value);
+            let pesoGrama = 0.0;
+            if(peso <=500)
+                pesoGrama = 40;
+            else if(peso <=1000)
+                pesoGrama = 35;
+            else
+                pesoGrama = 30;
+            document.getElementById('valor-pagar').innerText = `O valor a ser pago é: R$ ${(peso*pesoGrama/1000).toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>
