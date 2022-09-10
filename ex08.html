@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contas a Pagar</title>
+</head>
+
+<body>
+    <h1>Contas do Mês</h1>
+    <p>Descrição da conta:<input type="text" id="descricao-conta"></p>
+    <p>Valor a pagar (R$):<input type="text" id="valor-pagar"></p>
+    <p><input type="button" value="Registrar conta" onclick="registrar()"></p>
+    <div id="lista-compras"></div>
+    --------------------------------
+    <div id="total"></div>
+    <script>
+        let qtdContas = 0;
+        let totalContas = 0;
+        const registrar = function () {
+            let descricaoConta = document.getElementById('descricao-conta').value;
+            let valorPagar = Number(document.getElementById('valor-pagar').value);
+            document.getElementById('lista-compras').innerHTML += `${descricaoConta} - ${valorPagar} <br>`
+            qtdContas++;
+            totalContas += valorPagar;
+            document.getElementById('total').innerHTML = `${qtdContas} contas - Total (R$): ${totalContas}`
+            document.getElementById('descricao-conta').value = '';
+            document.getElementById('valor-pagar').value = '';
+            document.getElementById('descricao-conta').focus();
+        }
+    </script>
+</body>
+
+</html>
