@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objeto LiteralDocument</title>
+</head>
+
+<body>
+    <h1>for in - objetos</h1>
+    <div id="listar-pares"></div>
+    <script>
+        let livro = {
+            titulo: "JavaScript",
+            autor: "Maujor",
+            paginas: "432",
+            preco: "R$69,00",
+            freteSedex: function (ceporigem, cepdestino, peso) {
+                let valorFrete = "";
+                valorFrete = ceporigem * cepdestino * peso;
+                return valorFrete;
+            },
+            capitulos:
+            {
+                capitulo1: "Revisao JavaScript",
+                capitulo2: "Funções",
+                capitulo3: "Eventos",
+                capitulo4: "Requisições"
+            }
+        };
+        let pares = "";
+        for (let prop in livro) {
+            if (typeof livro[prop] == "object") {
+                for (let subProp in livro[prop]) {
+                    pares += subProp + ": " + livro[prop][subProp] + "<br>";
+                }
+            }
+            else if(typeof livro[prop] != "function")
+                pares += prop + ": " + livro[prop] + "<br>";
+            
+        };
+        console.table(livro);
+        document.getElementById("listar-pares").innerHTML = pares;
+    </script>
+</body>
+
+</html>
