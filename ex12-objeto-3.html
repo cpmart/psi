@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objetos</title>
+</head>
+
+<body>
+    <script>
+        function CilindroConstrutor1(r, h) {
+            this.raioBase = r;
+            this.altura = h;
+            this.areaBase = function calculaAreaBase() {
+                return Math.PI * Math.pow(this.raioBase, 2);
+            };
+            this.areaLateral = function calculaAreaLateral() {
+                return 2 * Math.PI * this.raioBase * this.altura;
+            };
+        };
+
+        function CilindroConstrutor2(r, h) {
+            return {
+                raioBase: r,
+                altura: h,
+                areaBase: function calculaAreaBase() {
+                    return Math.PI * Math.pow(this.raioBase, 2);
+                },
+                areaLateral: function calculaAreaLateral() {
+                    return 2 * Math.PI * this.raioBase * this.altura;
+                },
+            }
+        };
+        class CilindroClasse {
+            constructor(r, h) {
+                this.raioBase = r;
+                this.altura = h;
+            }
+            calculaAreaBase() {
+                return Math.PI * Math.pow(this.raioBase, 2);
+            }
+            calculaAreaLateral() {
+                return 2 * Math.PI * this.raioBase * this.altura;
+            }
+        }
+        cilindroUm = new CilindroConstrutor1(3, 10);
+        console.log("Raio da base:  " + cilindroUm.raioBase);
+        console.log("Altura:  " + cilindroUm.altura);
+        console.log("Área da base: " + cilindroUm.areaBase());
+        console.log("Área Lateral: " + cilindroUm.areaLateral()); 
+        
+        cilindroDois = new CilindroConstrutor1(3, 10);
+        console.log("Raio da base:  " + cilindroDois.raioBase);
+        console.log("Altura:  " + cilindroDois.altura);
+        console.log("Área da base: " + cilindroDois.areaBase());
+        console.log("Área Lateral: " + cilindroDois.areaLateral()); 
+
+        cilindroTres = new CilindroClasse(3, 10);
+        console.log("Raio da base:  " + cilindroTres.raioBase);
+        console.log("Altura:  " + cilindroTres.altura);
+        console.log("Área da base: " + cilindroTres.calculaAreaBase());
+        console.log("Área Lateral: " + cilindroTres.calculaAreaLateral()); 
+    </script>
+</body>
+
+</html>
