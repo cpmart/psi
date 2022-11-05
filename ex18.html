@@ -18,7 +18,8 @@
 <button onClick="inserirItem()">Inserir Item</button>
 <script>
     function inserirItem() {
-        //Só programar
+        let lista = document.querySelector('ul');
+        lista.innerHTML += `<li>${document.querySelector('input').value}</li>`;
     }
 
 </script>
