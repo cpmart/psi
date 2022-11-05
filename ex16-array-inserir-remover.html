@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="button" value="I" onclick="inserirEsquerda()">
+    <input type="button" value="R" onclick="removerEsquerda()">
+    <input type="text" name="" id="valor">
+    <input type="button" value="I" onclick="inserirDireita()">
+    <input type="button" value="R" onclick="removerDireita()"><br>
+    <input type="button" value="Remover Elemento" onclick="removerElemento()">
+    <script>
+        let vetor = [];
+        const removerElemento = function(){
+            let elemento = document.getElementById('valor').value;
+            let posicao = vetor.indexOf(elemento);
+            if(posicao>-1)
+                vetor.splice(posicao,1);
+            limparMostrar();
+        }
+        const limparMostrar = function(){
+            console.log(vetor);
+            document.getElementById('valor').value = '';
+            document.getElementById('valor').focus();
+        }
+        const inserirEsquerda = function(){
+            vetor.unshift(document.getElementById('valor').value);
+            limparMostrar();
+        }
+        const removerEsquerda = function(){
+            vetor.shift();
+            limparMostrar();
+        }
+        const inserirDireita = function(){
+            vetor.push(document.getElementById('valor').value);
+            limparMostrar();
+        }
+        const removerDireita = function(){
+            vetor.pop();
+            limparMostrar();
+        }
+        
+    </script>
+</body>
+
+</html>
